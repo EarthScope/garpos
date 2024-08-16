@@ -1,0 +1,4 @@
+sample/*
+*.pyc
+build/
+*.egg-info/

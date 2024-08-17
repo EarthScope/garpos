@@ -2,9 +2,8 @@ from pathlib import Path
 
 from .garpos_v102.garpos_main import drive_garpos
 
-for path in Path(__file__).parent.rglob('*'):
-    if path.is_dir() and path.name == 'f90lib':
-        print(path)
-        LIB_DIRECTORY = str(path)
-
+from .load_module import LIB_DIRECTORY
+if not LIB_DIRECTORY:
+    raise FileNotFoundError('Could not find the fortran library directory')
 LIB_RAYTRACE = 'lib_raytrace.so'
+

@@ -15,13 +15,13 @@ class CustomInstallCommand(install):
     def run(self):
         install.run(self)
         # Define the target directory for cloning
-        target_dir = Path(__file__).parent / "bin"
+        target_dir = Path(__file__).parent / "garpos"
         fortran_source = self.find_dir(target_dir, "f90lib")
         build_command = "gfortran -shared -fPIC -fopenmp -O3 -o lib_raytrace.so sub_raytrace.f90 lib_raytrace.f90"
         subprocess.run(build_command.split(), cwd=fortran_source)
 
 f90_extension = Extension(
-    name="garpos.f90lib",
+    name="garpos.garpos_v102.f90lib",
     sources=["garpos/garpos_v102/f90lib/*"],
 )
 setup(

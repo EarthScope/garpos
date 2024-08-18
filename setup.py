@@ -22,14 +22,14 @@ class CustomInstallCommand(install):
 
 f90_extension = Extension(
     name="garpos.f90lib",
-    sources=["garpos/f90lib/*"],
+    sources=["garpos/garpos_v102/f90lib/*"],
 )
 setup(
     name="garpos",
     version="1.0.2",
     python_requires=">=3.7",
     packages=find_namespace_packages(),
-    package_data={"garpos": ["f90lib/*"]},
+    package_data={"garpos": ["garpos/garpos_v102/f90lib/*"]},
     install_requires=[
         "numpy",
         "scipy",

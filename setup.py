@@ -1,4 +1,4 @@
-from setuptools import setup,find_namespace_packages
+from setuptools import setup,find_namespace_packages,Extension
 from setuptools.command.install import install
 import platform
 from pathlib import Path
@@ -20,6 +20,10 @@ class CustomInstallCommand(install):
         build_command = "gfortran -shared -fPIC -fopenmp -O3 -o lib_raytrace.so sub_raytrace.f90 lib_raytrace.f90"
         subprocess.run(build_command.split(), cwd=fortran_source)
 
+f90_extension = Extension(
+    name="garpos.f90lib",
+    sources=["garpos/f90lib/*"],
+)
 setup(
     name="garpos",
     version="1.0.2",

@@ -25,7 +25,7 @@ setup(
     version="1.0.2",
     python_requires=">=3.7",
     packages=find_namespace_packages(),
-    package_data={"f90lib": ["f90lib/*"]},
+    package_data={"garpos": ["f90lib/*"]},
     install_requires=[
         "numpy",
         "scipy",

@@ -20,20 +20,14 @@ class CustomInstallCommand(install):
         build_command = "gfortran -shared -fPIC -fopenmp -O3 -o lib_raytrace.so sub_raytrace.f90 lib_raytrace.f90"
         subprocess.run(build_command.split(), cwd=fortran_source)
 
-f90_extension = Extension(
-    name="f90lib",
-    sources=["garpos/garpos_v102/f90lib/lib_raytrace.so",
-            "garpos/garpos_v102/f90lib/sub_raytrace.f90",
-            "garpos/garpos_v102/f90lib/lib_raytrace.f90",
-            "garpos/garpos_v102/f90lib/sub_raytrace.so"],
-)
+
 setup(
     name="garpos",
     version="1.0.2",
     python_requires=">=3.7",
     packages=find_namespace_packages(),
     package_data={"garpos": ["garpos/garpos_v102/f90lib/lib_raytrace.so"]},
-    ext_modules=[f90_extension],
+    
     install_requires=[
         "numpy",
         "scipy",

@@ -21,7 +21,7 @@ class CustomInstallCommand(install):
         subprocess.run(build_command.split(), cwd=fortran_source)
 
 f90_extension = Extension(
-    name="garpos.garpos_v102.f90lib",
+    name="f90lib",
     sources=["garpos/garpos_v102/f90lib/lib_raytrace.so",
             "garpos/garpos_v102/f90lib/sub_raytrace.f90",
             "garpos/garpos_v102/f90lib/lib_raytrace.f90",

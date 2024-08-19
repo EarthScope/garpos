@@ -22,7 +22,10 @@ class CustomInstallCommand(install):
 
 f90_extension = Extension(
     name="garpos.garpos_v102.f90lib",
-    sources=["garpos/garpos_v102/f90lib/*"],
+    sources=["garpos/garpos_v102/f90lib/lib_raytrace.so",
+            "garpos/garpos_v102/f90lib/sub_raytrace.f90",
+            "garpos/garpos_v102/f90lib/lib_raytrace.f90",
+            "garpos/garpos_v102/f90lib/sub_raytrace.so"],
 )
 setup(
     name="garpos",

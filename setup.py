@@ -26,8 +26,7 @@ setup(
     version="1.0.2",
     python_requires=">=3.7",
     packages=find_namespace_packages(),
-    package_data={"garpos": ["garpos/garpos_v102/f90lib/lib_raytrace.so"]},
-    
+    include_package_data = True,
     install_requires=[
         "numpy",
         "scipy",

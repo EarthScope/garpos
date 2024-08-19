@@ -1,3 +1,13 @@
+# Earth Scope
+This repository is a fork of "GARPOS" with included support to install with setuptools
+## Install instructions
+
+```
+pip install "garpos @ git+https://github.com/EarthScope/garpos.git"
+```
+
+
+
 # GARPOS
 
 <img src="https://github.com/s-watanabe-jhod/garpos/assets/68180987/ed955d3c-4c3b-4ca3-91d5-f57b876cfa7b" width=400 alt="GARPOS">
